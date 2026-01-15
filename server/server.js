@@ -60,6 +60,11 @@ app.use("/api/leads", leadsRoutes);
 app.use("/api/order-acknowledgements",OrderAcknowledgement);
 app.use("/api/clients", clientRoutes);
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
+
+// Export for Vercel
+export default app;
